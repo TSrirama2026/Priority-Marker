@@ -1,50 +1,21 @@
-# Priority-Marker
+x# Priority-Marker
 This microservice is responsible for assigning priority to events
 
-First, ensure that you are connected to the microservice. The microservice is public.
+Instructions to follow
 
-Secondly, configure the microservice with your own host. Currently, the microservices runs on
-a localhost, but you can make it public if you desire to.
+1) Run npm install and this will create your node_modules and package-lock.json
+2) Run npm start or node index.js
+3) Run the js file or the data file that you want to run it in
+4) The microservice will process the request and assign a priority based on what the user wants
 
-Third, load your data into a json file. This can then be uploaded to the miscroservice and it
-will assign the priority level needed.
+Programmatically Requesting Data
 
-Progmatic Request
+![image](https://github.com/user-attachments/assets/a317b7af-3ec7-4eb5-b444-4c860f8793a1)
 
-fetch('http://localhost:3000/tasks', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
-  .then(response => {
-    // Convert response to JSON
-    return response.json();
-  })
-  .then(data => {
-    console.log('Tasks:', data.tasks);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+Programmatically Receiving Data
 
+![image](https://github.com/user-attachments/assets/90cb5a0e-5a25-4a34-92ea-e85a7d985feb)
 
-Progrmatic Recieve
+Diagram for data
 
-fetch('http://localhost:3000/tasks', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    title: 'Finish project',
-    description: 'urgent: do it soon'
-  })
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log('Created Task:', data.task);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+![image](https://github.com/user-attachments/assets/14561c39-9bed-4eeb-b895-abe8ad3e25bb)
