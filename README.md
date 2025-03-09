@@ -25,4 +25,5 @@ Programmatically Receiving Data
 ![image](https://github.com/user-attachments/assets/90cb5a0e-5a25-4a34-92ea-e85a7d985feb)
 
 Diagram for data
+
 ![image](https://github.com/user-attachments/assets/14561c39-9bed-4eeb-b895-abe8ad3e25bb)
