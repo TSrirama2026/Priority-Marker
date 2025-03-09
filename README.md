@@ -48,3 +48,5 @@ fetch('http://localhost:3000/tasks', {
   .catch(error => {
     console.error('Error:', error);
   });
+
+![image](https://github.com/user-attachments/assets/14561c39-9bed-4eeb-b895-abe8ad3e25bb)
