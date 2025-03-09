@@ -1,39 +1,24 @@
 // test.js
-const fetch = require('node-fetch');
+const axios = require('axios');
 
-const BASE_URL = 'http://localhost:3000';
-
-async function runTests() {
+async function testMicroservice() {
   try {
-    // 1. Create a new event (POST /events)
-    const createResponse = await fetch(`${BASE_URL}/events`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        title: 'Finish the important presentation',
-        description: 'urgent: this is critical'
-      })
-    });
-    const createData = await createResponse.json();
+    // This data simulates an "event" being created on another site
+    // and sent over to your microservice.
+    const eventData = {
+      title: "Doctor's Appointment",
+      date: "2025-03-15",
+      necessity: "medical"
+    };
 
-    console.log('Create Event Response:', createData);
+    // Make a POST request to your running microservice
+    const response = await axios.post('http://localhost:3000/assignPriority', eventData);
 
-    // 2. Get all events (GET /events)
-    const getResponse = await fetch(`${BASE_URL}/events`);
-    const getData = await getResponse.json();
-
-    console.log('GET All Events Response:', getData);
-
-    // A real test would have asserts here, e.g., 
-    // expect(createData.event.priority).toBe('High');
-    // for demonstration, we just log results
-
-    console.log('All tests ran successfully');
-  } catch (err) {
-    console.error('Test failed:', err);
-    process.exit(1);
+    console.log('Response from microservice:', response.data);
+  } catch (error) {
+    console.error('Error:', error.message);
   }
 }
 
-// Run the test script
-runTests();
+// Call the test function
+testMicroservice();
