@@ -1,4 +1,3 @@
-// test.js
 const axios = require('axios');
 
 async function testMicroservice() {
